@@ -51,5 +51,6 @@ public class Character {
 
 
 
-![alt text](<Strategy Pattern UML.png>)
+![Strategy Pattern UML (1)](https://github.com/user-attachments/assets/2639e078-2617-4dc2-85af-4ebf2e27a0d6)
+
 
