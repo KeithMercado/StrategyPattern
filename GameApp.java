@@ -1,14 +1,20 @@
 public class GameApp {
     public static void main(String[] args) {
-        Character knight = new Character(new SwingSword(), new Shield());
+        Character knight = new Character("Knight", new SwingSword(), new Shield(), new Dodge(), new CreateMagic());
+        
+        Character wizard = new Character("Wizard", new CastSpell(), new CreateMagic());
+        
+        Character archer = new Character("Archer", new ShootArrow(), new Dodge());
+
+        System.out.println("Knight:");
         knight.attack();
         knight.defend();
 
-        Character wizard = new Character(new CastSpell(), new CreateMagic());
+        System.out.println("\nWizard:");
         wizard.attack();
         wizard.defend();
 
-        Character archer = new Character(new ShootArrow(), new Dodge());
+        System.out.println("\nArcher:");
         archer.attack();
         archer.defend();
     }
