@@ -1,10 +1,12 @@
+import java.util.*;
+
 public class Character {
     private AttackStrategy attackStrategy;
-    private DefenseStrategy defenseStrategy;
+    private List<DefenseStrategy> defenseStrategies = new ArrayList<>();
 
-    public Character(AttackStrategy attackStrategy, DefenseStrategy defenseStrategy) {
+    public Character(String type, AttackStrategy attackStrategy, DefenseStrategy... defenseStrategies) {
         this.attackStrategy = attackStrategy;
-        this.defenseStrategy = defenseStrategy;
+        this.defenseStrategies.addAll(Arrays.asList(defenseStrategies));
     }
 
     public void attack() {
@@ -12,6 +14,8 @@ public class Character {
     }
 
     public void defend() {
-        defenseStrategy.defend();
+        for (DefenseStrategy strategy : defenseStrategies) {
+            strategy.defend();
+        }
     }
 }
